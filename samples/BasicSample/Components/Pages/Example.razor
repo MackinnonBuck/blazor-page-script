@@ -1,0 +1,41 @@
+﻿@page "/example"
+@attribute [StreamRendering]
+
+<PageTitle>Example</PageTitle>
+
+<PageScript Src="./Components/Pages/Example.razor.js" />
+
+<h1>Example</h1>
+
+<p>
+    This page demonstrates how the <b>@("<PageScript>")</b> component can be used to apply transformations
+    to the page via JavaScript.
+</p>
+
+<p>
+    The <b>Example.razor.js</b> file changes the background color of this page and replaces the content
+    of each of the items below.
+</p>
+
+@for (var i = 0; i < _itemCount; i++)
+{
+    <div data-permanent="item-@i">
+        <p class="item-initial-content">Initial content</p>
+    </div>
+}
+
+@code {
+    private const int TotalItemCount = 5;
+
+    private int _itemCount;
+
+    protected override async Task OnInitializedAsync()
+    {
+        for (var i = 0; i < TotalItemCount; i++)
+        {
+            await Task.Delay(500);
+            _itemCount++;
+            StateHasChanged();
+        }
+    }
+}
