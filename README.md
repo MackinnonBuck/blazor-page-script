@@ -40,11 +40,11 @@ Take a look at the `samples` folder in this repository for more usage examples.
 
 ## Expected usage patterns
 
-**A `<PageScript>` in a `@page` component**
+### A `<PageScript>` in a `@page` component
 
 This is expected to be the most common use case. This allows pages to put initialization logic in `onLoad` and cleanup logic in `onDispose`, while reacting to enhanced page updates in `onUpdate`.
 
-**A `<PageScript>` in the application's layout**
+### A `<PageScript>` in the application's layout
 
 A `<PageScript>` placed in the app's layout will get its `onLoad` callback invoked once per full page load and the `onUpdate` callback invoked once per enhanced page update.
 
