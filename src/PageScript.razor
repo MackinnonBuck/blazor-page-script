@@ -1,7 +1,18 @@
+@if (!string.IsNullOrEmpty(Integrity) || !string.IsNullOrEmpty(CrossOrigin))
+{
+    <link rel="modulepreload" href="@Src" integrity="@Integrity" crossorigin="@CrossOrigin" />
+}
+
 <page-script src="@Src"></page-script>
 
 @code {
     [Parameter]
     [EditorRequired]
     public string Src { get; set; } = default!;
+
+    [Parameter]
+    public string? Integrity { get; set; }
+
+    [Parameter]
+    public string? CrossOrigin { get; set; }
 }
