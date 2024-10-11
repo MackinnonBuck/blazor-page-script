@@ -1,3 +1,5 @@
+**NOTE: This package has been superseded by https://github.com/MackinnonBuck/blazor-js-components**
+
 # BlazorPageScript
 
 A Blazor `<PageScript>` component enabling per-page JavaScript navigation callbacks.
